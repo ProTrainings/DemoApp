@@ -14,6 +14,8 @@
 		70190B512C068B57003BF2B7 /* DemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70190B502C068B57003BF2B7 /* DemoAppTests.swift */; };
 		70190B5B2C068B57003BF2B7 /* DemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70190B5A2C068B57003BF2B7 /* DemoAppUITests.swift */; };
 		70190B5D2C068B57003BF2B7 /* DemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70190B5C2C068B57003BF2B7 /* DemoAppUITestsLaunchTests.swift */; };
+		70190B6E2C0782F0003BF2B7 /* ProTrainingsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70190B6D2C0782F0003BF2B7 /* ProTrainingsKit */; };
+		70190B712C0784AF003BF2B7 /* ProTrainingsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70190B702C0784AF003BF2B7 /* ProTrainingsKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70190B6E2C0782F0003BF2B7 /* ProTrainingsKit in Frameworks */,
+				70190B712C0784AF003BF2B7 /* ProTrainingsKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +147,10 @@
 			dependencies = (
 			);
 			name = DemoApp;
+			packageProductDependencies = (
+				70190B6D2C0782F0003BF2B7 /* ProTrainingsKit */,
+				70190B702C0784AF003BF2B7 /* ProTrainingsKit */,
+			);
 			productName = DemoApp;
 			productReference = 70190B3C2C068B56003BF2B7 /* DemoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 70190B332C068B56003BF2B7;
+			packageReferences = (
+				70190B6F2C0784AF003BF2B7 /* XCRemoteSwiftPackageReference "ProTrainingsKit" */,
+			);
 			productRefGroup = 70190B3D2C068B56003BF2B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -425,6 +436,8 @@
 				DEVELOPMENT_TEAM = VWB7346LNU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ProTrainings;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -437,6 +450,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.protrainings.DemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,6 +470,8 @@
 				DEVELOPMENT_TEAM = VWB7346LNU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ProTrainings;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -466,6 +484,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.protrainings.DemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,6 +609,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70190B6F2C0784AF003BF2B7 /* XCRemoteSwiftPackageReference "ProTrainingsKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ProTrainings/ProTrainingsKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70190B6D2C0782F0003BF2B7 /* ProTrainingsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ProTrainingsKit;
+		};
+		70190B702C0784AF003BF2B7 /* ProTrainingsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70190B6F2C0784AF003BF2B7 /* XCRemoteSwiftPackageReference "ProTrainingsKit" */;
+			productName = ProTrainingsKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 70190B342C068B56003BF2B7 /* Project object */;
 }
