@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70190B402C068B56003BF2B7 /* DemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70190B3F2C068B56003BF2B7 /* DemoAppApp.swift */; };
+		70190B402C068B56003BF2B7 /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70190B3F2C068B56003BF2B7 /* DemoApp.swift */; };
 		70190B422C068B56003BF2B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70190B412C068B56003BF2B7 /* ContentView.swift */; };
 		70190B442C068B57003BF2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70190B432C068B57003BF2B7 /* Assets.xcassets */; };
 		70190B472C068B57003BF2B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70190B462C068B57003BF2B7 /* Preview Assets.xcassets */; };
@@ -16,6 +16,9 @@
 		70190B5D2C068B57003BF2B7 /* DemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70190B5C2C068B57003BF2B7 /* DemoAppUITestsLaunchTests.swift */; };
 		70190B6E2C0782F0003BF2B7 /* ProTrainingsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70190B6D2C0782F0003BF2B7 /* ProTrainingsKit */; };
 		70190B712C0784AF003BF2B7 /* ProTrainingsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70190B702C0784AF003BF2B7 /* ProTrainingsKit */; };
+		70FCFE222C07C08F00F0FC60 /* ExistingUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCFE212C07C08F00F0FC60 /* ExistingUserView.swift */; };
+		70FCFE242C08FF5B00F0FC60 /* ProTrainingsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCFE232C08FF5B00F0FC60 /* ProTrainingsWebView.swift */; };
+		70FD814B2C07A171005B334E /* NewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD814A2C07A171005B334E /* NewUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		70190B3C2C068B56003BF2B7 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		70190B3F2C068B56003BF2B7 /* DemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppApp.swift; sourceTree = "<group>"; };
+		70190B3F2C068B56003BF2B7 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		70190B412C068B56003BF2B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		70190B432C068B57003BF2B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70190B462C068B57003BF2B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -46,6 +49,10 @@
 		70190B562C068B57003BF2B7 /* DemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70190B5A2C068B57003BF2B7 /* DemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppUITests.swift; sourceTree = "<group>"; };
 		70190B5C2C068B57003BF2B7 /* DemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		70FCFE202C07B08500F0FC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		70FCFE212C07C08F00F0FC60 /* ExistingUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingUserView.swift; sourceTree = "<group>"; };
+		70FCFE232C08FF5B00F0FC60 /* ProTrainingsWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProTrainingsWebView.swift; sourceTree = "<group>"; };
+		70FD814A2C07A171005B334E /* NewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +105,14 @@
 		70190B3E2C068B56003BF2B7 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				70190B3F2C068B56003BF2B7 /* DemoAppApp.swift */,
+				70FCFE202C07B08500F0FC60 /* Info.plist */,
+				70190B3F2C068B56003BF2B7 /* DemoApp.swift */,
 				70190B412C068B56003BF2B7 /* ContentView.swift */,
 				70190B432C068B57003BF2B7 /* Assets.xcassets */,
 				70190B452C068B57003BF2B7 /* Preview Content */,
+				70FD814A2C07A171005B334E /* NewUserView.swift */,
+				70FCFE212C07C08F00F0FC60 /* ExistingUserView.swift */,
+				70FCFE232C08FF5B00F0FC60 /* ProTrainingsWebView.swift */,
 			);
 			path = DemoApp;
 			sourceTree = "<group>";
@@ -269,7 +280,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				70190B422C068B56003BF2B7 /* ContentView.swift in Sources */,
-				70190B402C068B56003BF2B7 /* DemoAppApp.swift in Sources */,
+				70FCFE242C08FF5B00F0FC60 /* ProTrainingsWebView.swift in Sources */,
+				70FD814B2C07A171005B334E /* NewUserView.swift in Sources */,
+				70FCFE222C07C08F00F0FC60 /* ExistingUserView.swift in Sources */,
+				70190B402C068B56003BF2B7 /* DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +450,7 @@
 				DEVELOPMENT_TEAM = VWB7346LNU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DemoApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ProTrainings;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -470,6 +485,7 @@
 				DEVELOPMENT_TEAM = VWB7346LNU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DemoApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ProTrainings;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
