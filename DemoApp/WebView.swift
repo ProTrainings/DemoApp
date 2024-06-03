@@ -11,13 +11,13 @@ import WebKit
 struct ProTrainingsWebView: View {
   @Environment(\.dismiss) var dismiss
 
-  @Binding var magicLink: String?
+  @Binding var magicLink: String
   @State private var isLoading: Bool = true
   
   var body: some View {
     VStack {
       WebView(
-        link: magicLink!,
+        link: magicLink,
         isLoading: $isLoading
       )
     }
@@ -38,7 +38,7 @@ struct ProTrainingsWebView: View {
 }
 
 struct WebView: UIViewRepresentable {
-  var link: String?
+  var link: String = ""
   @Binding var isLoading: Bool
   
   let webView: WKWebView = WKWebView(frame: .zero)
@@ -69,11 +69,12 @@ struct WebView: UIViewRepresentable {
   
   func updateUIView(_ uiView: UIViewType, context: Context) {
     webView.navigationDelegate = context.coordinator
-    
-    print(self.link ?? "no link provided")
-    if let link = link, let url = URL(string: link) {
-      let urlRequest = URLRequest(url: url)
-      webView.load(urlRequest)
+   
+    if !link.isEmpty {
+      if let url = URL(string: link) {
+        let urlRequest = URLRequest(url: url)
+        webView.load(urlRequest)
+      }
     }
   }
 }

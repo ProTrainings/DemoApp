@@ -18,6 +18,9 @@ struct NewUserView: View {
   @State private var lastName: String = ""
   @State private var login: String = ""
   @State private var email: String = ""
+ 
+  @State private var magicLink: String = ""
+  @State private var webViewVisible: Bool = false
   
   var body: some View {
     VStack {
@@ -52,7 +55,7 @@ struct NewUserView: View {
         Button(action: {
           Task {
             if let client = client {
-              let (_, err) = await client.createUser(
+              let (newUser, err) = await client.createUser(
                 login: login,
                 email: email,
                 lastName: lastName,
@@ -65,6 +68,13 @@ struct NewUserView: View {
                 } else {
                   showAlert = true
                   alertMessage = "An unknown error occured..."
+                }
+              } else {
+                if let user = newUser, 
+                    let link = await client.getMagicLink(login: user.login) {
+                  
+                  self.magicLink = link
+                  self.webViewVisible = true
                 }
               }
             }
@@ -79,7 +89,7 @@ struct NewUserView: View {
         }
         
         Section("Developer Notes") {
-          Text("Upon user creation, the app will automatically login with the created credentials.")
+          Text("Upon user creation, this demo app will automatically login with the created credentials.")
           Text("It is up to the developer to store their password securely for use later.")
         }
       }
@@ -97,6 +107,9 @@ struct NewUserView: View {
         self.apiKey = apiKey
         self.client = ProTrainingsClient(apiKey: apiKey)
       }
+    }
+    .navigationDestination(isPresented: $webViewVisible) {
+      ProTrainingsWebView(magicLink: self.$magicLink)
     }
   }
 }

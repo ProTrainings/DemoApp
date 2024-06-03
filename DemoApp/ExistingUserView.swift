@@ -18,7 +18,7 @@ struct ExistingUserView: View {
   @State private var password: String = ""
   
   @State private var webViewVisible: Bool = false
-  @State private var magicLink: String?
+  @State private var magicLink: String = ""
   
   var body: some View {
     VStack {
@@ -31,17 +31,13 @@ struct ExistingUserView: View {
               .autocapitalization(.none)
               .autocorrectionDisabled()
           }
-          HStack {
-            Text("Password")
-              .bold()
-
-            SecureField("Password", text: $password)
-          }
         }
         Button(action: {
           Task {
-            if let client = client, let magicLink =  await client.getMagicLink(login: login) {
-              self.magicLink = magicLink
+            if let client = client,
+               let link = await client.getMagicLink(login: login) {
+              
+              self.magicLink = link
               self.webViewVisible = true
             } else {
               showAlert = true
@@ -55,6 +51,10 @@ struct ExistingUserView: View {
           Button("Ok", role: .cancel) {}
         } message: {
           Text(alertMessage)
+        }
+        
+        Section("Developer Notes") {
+          Text("The user experience you get after logging into ProTrainings is largely based on how your company is setup.  \n\nContact groups@protrainings.com to customize that experience. ")
         }
       }
       HStack {
