@@ -9,15 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
   var body: some View {
-    TabView {
-      NewUserView()
-        .tabItem {
-          Label("New User", systemImage: "person.badge.plus")
-        }
-      ExistingUserView()
-        .tabItem {
-          Label("Existing User", systemImage: "person.circle")
-        }
+    NavigationStack {
+      TabView {
+        NewUserView()
+          .tabItem {
+            Label("New User", systemImage: "person.badge.plus")
+          }
+        ExistingUserView()
+          .tabItem {
+            Label("Existing User", systemImage: "person.circle")
+          }
+      }
     }
   }
 }

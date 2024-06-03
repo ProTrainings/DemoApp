@@ -17,7 +17,7 @@ struct ExistingUserView: View {
   @State private var login: String = ""
   @State private var password: String = ""
   
-  @State private var webViewVisible: Bool = true
+  @State private var webViewVisible: Bool = false
   @State private var magicLink: String?
   
   var body: some View {
@@ -43,6 +43,9 @@ struct ExistingUserView: View {
             if let client = client, let magicLink =  await client.getMagicLink(login: login) {
               self.magicLink = magicLink
               self.webViewVisible = true
+            } else {
+              showAlert = true
+              alertMessage = "No user found with that login."
             }
           }
         }, label: {
@@ -68,11 +71,8 @@ struct ExistingUserView: View {
         self.client = ProTrainingsClient(apiKey: apiKey)
       }
     }
-    .fullScreenCover(isPresented: $webViewVisible)  {
-      ProTrainingsWebView(
-        isVisible: $webViewVisible,
-        magicLink: magicLink ?? "https://www.protrainings.com"
-     )
+    .navigationDestination(isPresented: $webViewVisible) { 
+      ProTrainingsWebView(magicLink: self.$magicLink)
     }
   }
 }
